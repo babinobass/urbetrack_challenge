@@ -9,7 +9,6 @@ const Home = () => {
   const { photos, fetchNextPage, isFetchingNextPage } = usePhotos();
   const { favorites } = useFavoritesStore();
   const { user } = useAuthStore();
-
   return (
     <Section
       className="p-8"
@@ -19,9 +18,11 @@ const Home = () => {
         Urbetrack Challenge
       </Heading>
       <Flex className="gap-8 flex-wrap" justify="center">
-        {photos.length > 0 &&
-          photos.map(({ author, id, download_url }) => {
-            const isFavorite = !!favorites[user ?? ""].find((i) => i.id === id);
+        {photos?.length > 0 &&
+          photos?.map(({ author, id, download_url }) => {
+            const isFavorite = !!favorites[user ?? ""]?.find(
+              (i) => i.id === id
+            );
             return (
               <Card
                 key={id}

@@ -29,7 +29,8 @@ const Image = () => {
   const { user } = useAuthStore();
   const [remove, setRemove] = useState<boolean>(false);
 
-  const isFavorite = !!favorites[user ?? ""].find((i) => i.id === id);
+  const isFavorite = !!favorites[user ?? ""]?.find((i) => i.id === id);
+
   const [isSaved, setIsSaved] = useState<boolean>(isFavorite);
   const paramId = Number(id) || 0;
   const { data, isLoading } = useImageDetails(paramId);
@@ -45,6 +46,7 @@ const Image = () => {
     setIsSaved(false);
     setRemove(false);
   };
+
   return (
     <Section
       className="md:p-8 p-4 flex justify-center relative"
@@ -118,7 +120,7 @@ const Image = () => {
               </Flex>
             </Flex>
             <Button
-              onClick={() => downloadImage(data?.download_url, data.auhtor)}
+              onClick={() => downloadImage(data?.download_url)}
               color="purple"
               size="4"
             >

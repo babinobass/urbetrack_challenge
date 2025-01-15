@@ -22,11 +22,6 @@ export const validateUser = (username: string, password: string) => {
   return true;
 };
 
-export const downloadImage = (imageUrl: string, fileName: string) => {
-  const link = document.createElement("a");
-  link.href = imageUrl;
-  link.download = fileName;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+export const downloadImage = (imageUrl: string) => {
+  window?.open(imageUrl, "_blank");
 };

@@ -5,7 +5,7 @@ export const getPhotos = async ({ pageParam = 1 }: { pageParam: number }) => {
       `https://picsum.photos/v2/list?&page=${pageParam}&limit=10`
     );
     const photos = await response?.json();
-    return photos.map((item: Image) => {
+    return photos?.map((item: Image) => {
       const { id, author, download_url } = item;
       return {
         id,

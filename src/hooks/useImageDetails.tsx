@@ -9,7 +9,6 @@ const useImageDetails = (photoId: number) => {
       return data;
     },
   });
-  console.log(data);
 
   return { isLoading, data };
 };

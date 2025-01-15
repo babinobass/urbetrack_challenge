@@ -18,7 +18,7 @@ const Favorites: React.FC = () => {
       </Heading>
       <Flex wrap="wrap" justify="center" gap="2rem" className="">
         {user &&
-          favorites[user].map((favorite) => {
+          favorites[user]?.map((favorite) => {
             return <Card key={favorite.id} {...favorite} saved={true} />;
           })}
       </Flex>
