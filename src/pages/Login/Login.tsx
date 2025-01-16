@@ -118,6 +118,11 @@ const Login = () => {
             name="password"
             value={username.password}
             onChange={handleUser}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                authenticateUser();
+              }
+            }}
           >
             <TextField.Slot>
               <LockClosedIcon height="16" width="16" />
@@ -147,6 +152,11 @@ const Login = () => {
         <Flex mt="6" justify="center" gap="3">
           <Button
             onClick={authenticateUser}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                authenticateUser();
+              }
+            }}
             color="purple"
             className="btn_full"
           >

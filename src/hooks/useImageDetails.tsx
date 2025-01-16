@@ -9,8 +9,11 @@ const useImageDetails = (photoId: number) => {
       return data;
     },
   });
-
-  return { isLoading, data };
+  if (data?.id !== photoId) {
+    return { isLoading: true, data };
+  } else {
+    return { isLoading, data };
+  }
 };
 
 export default useImageDetails;

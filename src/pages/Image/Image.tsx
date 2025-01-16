@@ -19,6 +19,7 @@ import {
   BookmarkFilledIcon,
   ArrowLeftIcon,
 } from "@radix-ui/react-icons";
+
 import useAuthStore from "../../hooks/useAuthStore";
 import useFavoritesStore from "../../hooks/useFavoritesStore";
 
@@ -55,7 +56,7 @@ const Image = () => {
       <Box className="absolute top-4 left-8">
         <ArrowLeftIcon onClick={() => navigate(-1)} width={40} height={40} />
       </Box>
-      {isLoading ? (
+      {isLoading && id !== data?.id ? (
         <Flex direction="column" align="center">
           <Spinner size="3" />
           <Heading>cargando...</Heading>
@@ -76,7 +77,9 @@ const Image = () => {
                 className="rounded-md"
                 src={data?.download_url}
                 alt={data?.author}
-                onLoad={() => setLoading(false)}
+                onLoad={() => {
+                  setLoading(false);
+                }}
               />
               {remove ? (
                 <>
