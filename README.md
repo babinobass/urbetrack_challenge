@@ -68,7 +68,7 @@ Este proyecto es una aplicación web diseñada para cumplir con los requisitos p
 
 ### 1. Clonar el Repositorio  
 ```bash
-git clone https://github.com/tu-usuario/tu-repositorio.git
+git clone [https://github.com/tu-usuario/tu-repositorio.git](https://github.com/babinobass/urbetrack_challenge.git)
 cd tu-repositorio
 ```
 
@@ -82,8 +82,6 @@ npm install
 npm run dev
 ```
 
-### 4. Acceso al Proyecto  
-Abrir [http://localhost:5173](http://localhost:5173) en tu navegador.
 
 ---
 
